@@ -12,3 +12,27 @@ null=>Standalone value
 undefined 
 symbol=>unique
 */
+
+//Symbol
+
+let id=Symbol('123')
+let id2=Symbol('123')
+console.log(id==id2)
+
+
+//ARRAY
+
+const heroes=['soham','shiv','naman']
+
+//OBJECTS
+
+let myObj={
+    name:'Soham',
+    age:22
+}
+
+//Functions
+
+let myFunc = function(){
+    console.log('hello world')
+}
