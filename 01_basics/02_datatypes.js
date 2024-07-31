@@ -3,6 +3,9 @@
 
 
 //DATATYPES
+
+//Primitve (uses stack, call by value)
+
 /*
 Number=> 2^53
 bigint
@@ -18,6 +21,15 @@ symbol=>unique
 let id=Symbol('123')
 let id2=Symbol('123')
 console.log(id==id2)
+
+
+//Non primitve (uses heap , call by reference)
+
+/*
+Arrays
+objects 
+functions
+*/
 
 
 //ARRAY
