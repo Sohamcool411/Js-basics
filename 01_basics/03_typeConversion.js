@@ -41,7 +41,7 @@ let negValue= -value
 
 console.log('1'+2+2)
 console.log(false + 1+2+'2' +2 +true)
-console.log(false + 1+2+'2' +(2 +true))
+console.log(false + 1+2+'2' +(2 +true)) 
 
 //wherever the string occurs all the further types will be treated as string
 // it is always a good practice to use ()
