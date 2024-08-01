@@ -42,3 +42,14 @@ console.log(Object.entries(tinderUser))
 
 //to check if object has any property
 console.log(tinderUser.hasOwnProperty('isloggedIn'))
+
+
+//Destructuring
+const person={
+    name:'Soham',
+    age:22
+}
+const {name:n,age:a}=person 
+
+console.log(n);
+console.log(a);
