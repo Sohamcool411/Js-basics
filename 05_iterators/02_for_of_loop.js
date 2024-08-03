@@ -1,5 +1,4 @@
-//for of
-//this works similar to 'in' keyword in python.
+//for of , iterates over the value iterable object.
 
 const arr=[1,2,3,4,5]
 for (const num of arr) {
