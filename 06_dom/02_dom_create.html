@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom creation</title>
+</head>
+<body style="background-color: #212121;color:#fff;">
+    
+</body>
+<script>
+    const div=document.createElement('div')
+    console.log(div);
+    //div.innerText='Soham bhai' //innertext method brings the inner text and overwrites it.(2 round trip)
+    div.className='main'
+    div.id=Math.ceil(Math.random()*10)
+    div.setAttribute('title','generated title')// we can set custom attributes., directly sets the attribute(1 round trip).
+    div.style.backgroundColor='orange'
+    div.style.padding='10px'
+
+    const addtext = document.createTextNode('Soham Bhai')
+    div.appendChild(addtext)
+    // we created a new text node in document and appended it to div.
+
+    document.body.appendChild(div)
+    // then we appended the child di to body of document.
+
+
+    /*we can also wrap this above inside into a function to create a new div 
+    by passing arguements like className,innertext etc.*/
+    
+</script>
+</html>
