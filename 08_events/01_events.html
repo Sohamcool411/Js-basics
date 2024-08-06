@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //different methods to tell what to do in case of events
+    
+    // document.getElementById('owl').onclick=function(){
+    //     alert('owl clicked')
+    // }
+
+    //attachEvent()
+    //jQuery - on
+
+    //*****METHODS to study inside event listener******
+    //type , timestamp , preventDefault()
+    //target,toElement , scrElement , currentTarget
+    //clientX , clientY, screenX , screenY
+    //altkey , ctrlkey , shiftkey , keyCode
+
+    document.getElementById('images').addEventListener('click',(e)=>{
+        console.log('clicked inside ul');
+    },false)
+
+    document.getElementById('owl').addEventListener('click',(e)=>{
+        console.log('clicked owl');
+        //e.stopPropagation()
+    },false)
+
+    //concept of propagation (true or false)
+    /* if the value is set to true then "CAPTURING" mode is activated,
+    where value goes from top to bottom.
+
+    but when value is set to true the "BUBBLING" mode is activated,
+    where value goes from bottom to top. */
+
+    //if we only want the desired value we clicked , we can apply stopPropagation(),
+    
+
+    //Prevent default -to prevent default functionality of the element
+    document.getElementById('google').addEventListener('click',(e)=>{
+        e.preventDefault()
+        //e.stopPropagation()
+        //console.log('google clicked');
+    },false)
+
+
+    //code to remove the image we click on
+    document.querySelector('#images').addEventListener('click',(e)=>{
+        console.log(e.target.tagName);
+        let removeIt=e.target.parentNode
+        removeIt.remove()  
+    })
+    // if we click on img then its parent that is li will be removed
+    // but if we click on li then whole ul will be removed.
+    // similarly if we click on ul, then whole div will be removed.
+
+</script>
+</html>
