@@ -21,6 +21,8 @@
         if (xhr.readyState===4){
             const data = JSON.parse(xhr.responseText) //coverts to json object.
             console.log(data); //returns the response in form of string 
+
+            
             const img=document.createElement('img')
             img.src=`${data.avatar_url}`
             img.style.width='150px'
