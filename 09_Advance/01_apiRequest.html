@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api request</title>
+</head>
+<body style="background-color: #414141;">
+    <pre>0	UNSENT : Client has been created. open() not called yet.
+1	OPENED:	open() has been called.
+2	HEADERS_RECEIVED: send() has been called, and headers and status are available.
+3	LOADING: Downloading; responseText holds partial data.
+4	DONE: The operation is complete.</pre>
+</body>
+<script>
+    const url='https://api.github.com/users/Sohamcool411'
+    const xhr=new XMLHttpRequest() // this is like a class soo we create a new object.
+    xhr.open('GET',url)//creates a request
+    xhr.onreadystatechange=function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState===4){
+            const data = JSON.parse(xhr.responseText) //coverts to json object.
+            console.log(data); //returns the response in form of string 
+            const img=document.createElement('img')
+            img.src=`${data.avatar_url}`
+            img.style.width='150px'
+            img.style.alignSelf='centre'
+            document.body.appendChild(img)
+        }   
+    } //onreadystatechange takes function as value and implements that fn whenever the state changes.
+    xhr.send()//sends the request
+    
+
+
+</script>
+</html>
