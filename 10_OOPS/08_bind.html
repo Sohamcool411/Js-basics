@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button>Button clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library='react'
+            this.server='https://localhost:3000/'
+
+            /*requirement: as soon as the page loads an object of react should be created
+            & the button should get the reference of this and on click it should display some message. */
+            
+            document.querySelector('button').addEventListener('click',this.handleClick.bind(this))
+            /* if we do not use bind then it will use the 'this' in latest context i.e 'button' 
+            but bind(this) will permanently set the value of this for handleClick() to 'this' of it's context. */
+
+        }
+
+        handleClick(){ 
+            console.log('button clicked');
+            console.log(this.server);
+        }
+
+    }
+    const app = new React()
+    app.handleClick()
+</script>
+</html>
