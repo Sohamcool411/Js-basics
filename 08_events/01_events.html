@@ -71,5 +71,12 @@
     // but if we click on li then whole ul will be removed.
     // similarly if we click on ul, then whole div will be removed.
 
+    //e.target refers to the element which has triggered the event , 
+    //where as e.currentTarget refers to element to which event handler is attached to.
+    // for e.g if we have added event listener to images(ul) and click on owl(li) ,
+    //then e.target will refer to first li and then after propagation it will refer to ul.
+    //but e.currentTarget will always refer to ul.
+    
+
 </script>
 </html>
